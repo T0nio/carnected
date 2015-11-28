@@ -25,8 +25,6 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function run(){
-
-
 	newMarkers = [
 		{lat: myPosition.latitude, lng: myPosition.longitude},
 		{lat: myPosition.latitude+0.004, lng: myPosition.longitude-0.004},
@@ -34,15 +32,34 @@ function run(){
 
 	];
 	drop();
+
+	for(var category in categories){
+		addTrigger(category);
+	}
 }
 
+function addTrigger(category){
+		$("#category-"+category).click(function(){
+			console.log(category)
+			clearMarkers();
+			getMarkers(category);
+			drop();
+		});
+}
 
+function getMarkers(category){
+	for (var i in categories[category].places){
+		place = categories[category].places[i];
+		newMarkers.push({lat: place.lat, lng: place.lng});
+	}
+}
 
 function drop() {
   clearMarkers();
   for (var i = 0; i < newMarkers.length; i++) {
     addMarkerWithTimeout(newMarkers[i], i * 200);
   }
+  newMarkers = [];
 }
 
 function addMarkerWithTimeout(position, timeout) {

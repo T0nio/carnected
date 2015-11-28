@@ -4,7 +4,7 @@
 	}
 
 	function addCategory(category) {
-		$('#header nav ul').append('<li><a href="#" id="top-link"><span class="icon '+category.icon+'">'+category.label.capitalize()+'</span></a></li>');
+		$('#header nav ul').append('<li><a href="#" id="category-'+category.label+'"><span class="icon '+category.icon+'">'+category.label.capitalize()+'</span></a></li>');
 	}
 
 	for (var category in categories) {
