@@ -7,10 +7,9 @@
 		$('#header nav ul').append('<li><a href="#" id="top-link"><span class="icon '+category.icon+'">'+category.label.capitalize()+'</span></a></li>');
 	}
 
-	for (var i = 0; i <= categories.length - 1; i++) {
-		addCategory(categories[i]);
+	for (var category in categories) {
+		addCategory(category);
 	};
 
-	console.log(categories["restaurant"])
 
 })(jQuery);
