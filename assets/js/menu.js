@@ -8,7 +8,7 @@
 	}
 
 	for (var category in categories) {
-		addCategory(category);
+		addCategory(categories[category]);
 	};
 
 
