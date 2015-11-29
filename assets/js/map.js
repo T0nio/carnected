@@ -2,7 +2,9 @@ var map;
 var myPosition;
 var markers = [];
 var newMarkers = [];
-var image = 'images/marker.png';
+var markerIcone = "";
+var image = 'images/markers/marker.png';
+markerIcone = image;
 
 function initialize() {
     var mapCanvas = document.getElementById('map');
@@ -39,38 +41,37 @@ function run(){
 }
 
 function addTrigger(category){
-		$("#category-"+category).click(function(){
-			console.log(category)
-			clearMarkers();
-			getMarkers(category);
-			drop();
-		});
+	$("#category-"+category).click(function(){
+		clearMarkers();
+		getMarkers(category);
+		drop();
+	});
 }
 
 function getMarkers(category){
+	markerIcone = categories[category].marker;
 	for (var i in categories[category].places){
 		place = categories[category].places[i];
-		newMarkers.push({lat: place.lat, lng: place.lng});
+		newMarkers.push(place);
 	}
 }
 
 function drop() {
   clearMarkers();
   for (var i = 0; i < newMarkers.length; i++) {
-    addMarkerWithTimeout(newMarkers[i], i * 200);
+    addMarkerWithTimeout(newMarkers[i], i);
   }
   newMarkers = [];
 }
 
-function addMarkerWithTimeout(position, timeout) {
+function addMarkerWithTimeout(place, timeout) {
   window.setTimeout(function() {
     m = new google.maps.Marker({
-      position: position,
+      position: {"lat": place.lat, "lng": place.lng},
       map: map,
 	  icon: {
-      url: image,
-      scale: 0,
-    },
+      url: markerIcone,
+    	},
     });
     markers.push(m);
 
