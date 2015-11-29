@@ -34,7 +34,7 @@ var categories = {
 	"shopping": {
 		label: "shopping",
 		icon: "fa-shopping-bag",
-		marker: "images/markers/marker.png",
+		marker: "images/markers/shopping.png",
 		places: []
 	},
 	"amis": {
