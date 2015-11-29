@@ -34,11 +34,7 @@ var categories = {
 	"shopping": {
 		label: "shopping",
 		icon: "fa-shopping-bag",
-<<<<<<< HEAD
-		marker: "images/markers/marker.png",
-=======
 		marker: "images/markers/shopping.png",
->>>>>>> advancedMap
 		places: []
 	},
 	"amis": {
