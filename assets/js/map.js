@@ -70,8 +70,8 @@ function addMarkerWithTimeout(place, timeout) {
       position: {"lat": place.lat, "lng": place.lng},
       map: map,
 	  icon: {
-      url: markerIcone,
-    	},
+      	url: markerIcone,
+      },
     });
     markers.push(m);
 
