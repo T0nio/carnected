@@ -2,6 +2,7 @@ var categories = {
 	"restaurant": {
 		label: "restaurant",
 		icon: "fa-cutlery",
+		marker: "images/markers/restaurant.png",
 		places: [
 			{
 				title: "Le bohneur d'Antony",
@@ -12,14 +13,15 @@ var categories = {
 			{
 				title: "Le bohneur d'Antony",
 				description: "La nourriture du soleil levant.",
-				lat: 48.76104,
-				lng: 2.29132
+				lat: 48.76179,
+				lng: 2.28995
 			},
 		]
 	},
 	"bar": {
 		label: "bar",
 		icon: "fa-glass",
+		marker: "images/markers/bar.png",
 		places: [
 			{
 				title: "Brasserie de l'école Centrale",
@@ -32,11 +34,13 @@ var categories = {
 	"shopping": {
 		label: "shopping",
 		icon: "fa-shopping-bag",
+		marker: "images/markers/marker.png",
 		places: []
 	},
 	"amis": {
 		label: "amis",
 		icon: "fa-users",
+		marker: "images/markers/marker.png",
 		places: []
 	}
 };
